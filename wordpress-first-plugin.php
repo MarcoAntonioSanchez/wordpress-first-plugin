@@ -24,3 +24,13 @@ function first_plugin_enqueue_scripts_styles() {
 
 }
 add_action('wp_enqueue_scripts', 'first_plugin_enqueue_scripts_styles');
+
+/******************************************************************
+ Include files
+******************************************************************/
+
+include(plugin_dir_path( __FILE__ ) . 'includes/register_post_type.php'); // If this file doesn't exists, it will be skipped.
+include_once(plugin_dir_path( __FILE__ ) . 'includes/register_post_type.php'); // This one prevents code duplication.
+
+require(plugin_dir_path( __FILE__ ) . 'includes/register_post_type.php'); // This one is required, so it will stop code execution if it doesn't exists.
+require_once(plugin_dir_path( __FILE__ ) . 'includes/register_post_type.php'); // This one prevents code duplication too.
